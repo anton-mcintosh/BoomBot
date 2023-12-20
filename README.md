@@ -1,9 +1,9 @@
 # BoomBot
 ## Background:
 
-    In the Bellingham subreddit, people often post about a "boom" they heard. This occurs often enough that there is an unspoken challenge to be the first person to comment on the thread and call for a reset of the imaginary "boom counter".
+    ### In the Bellingham subreddit, people often post about a "boom" they heard. This occurs often enough that there is an unspoken challenge to be the first person to comment on the thread and call for a reset of the imaginary "boom counter".
 
-    I needed a project to refresh my Python skills so I decided to take on the challenge of actually implementing the boom counter with this bot.
+    ### I needed a project to refresh my Python skills so I decided to take on the challenge of actually implementing the boom counter with this bot.
 
 ## Intent:
 
