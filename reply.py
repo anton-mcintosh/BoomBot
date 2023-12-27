@@ -3,6 +3,8 @@ import pdb
 import re
 import os
 import details
+import main
+
 
 reddit = praw.Reddit(client_id=details.mainUser["client_id"],
                      client_secret=details.mainUser["client_secret"],
@@ -19,11 +21,11 @@ else:
         replied_to = replied_to.split("\n")
         replied_to = list(filter(None, replied_to))
 
-subreddit = reddit.subreddit('pythonforengineers')
+subreddit = reddit.subreddit('Bellingham')
 for submission in subreddit.hot(limit=5):
     if submission.id not in replied_to:
-        if re.search("i love python", submission.title, re.IGNORECASE):
-            submission.reply("Boom Bot says: Me too!!")
+        if re.search("boom", submission.title, re.IGNORECASE):
+            submission.reply("The boom counter has been reset! Days since last boom: ", main.daysSince)
             print("Bot replying to : ", submission.title)
             replied_to.append(submission.id)
 
