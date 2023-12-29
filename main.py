@@ -1,13 +1,14 @@
+""" BoomBot v0.1 """
+""" This bot will count the number of times the word "boom" is used in the Bellingham subreddit. 
+It will also keep track of how many days it has been since the last boom. 
+This file gathers data on past booms up until now."""
+
 import praw
 import details
 from datetime import datetime
 
 
-reddit = praw.Reddit(client_id=details.mainUser["client_id"],
-                     client_secret=details.mainUser["client_secret"],
-                     username=details.mainUser["username"],
-                     password=details.mainUser["password"],
-                     user_agent=details.mainUser["user_agent"])
+reddit = praw.Reddit('BoomBot v0.1')
 
 subreddit = reddit.subreddit("Bellingham")
 boomResults = subreddit.search("boom", time_filter="all")
@@ -34,6 +35,7 @@ for i in boomDict:
             daysSince = round((i[1] - prevTime) / 86400, 2) 
             print("Title: ", i[0])
             print("Days since last boom: ", daysSince)
+            print("Boom Date: ", datetime.utcfromtimestamp(i[1]).strftime('%m-%d-%Y'))
         prevTime = i[1]
 
 

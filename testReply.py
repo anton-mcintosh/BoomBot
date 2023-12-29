@@ -1,5 +1,5 @@
-""" reply.py
-This file will reply to any post in the subreddit that contains the word "boom" in the title. """
+""" This file is for testing the reply function of the bot.
+It is linked to the pythonforengineers subreddit."""
 
 import praw
 import pdb
@@ -19,12 +19,12 @@ else:
         replied_to = f.read()
         replied_to = replied_to.split("\n")
         replied_to = list(filter(None, replied_to))
-
-subreddit = reddit.subreddit('')
+replyText="The boom counter has been reset! Days since last boom: " + str(main.daysSince)
+subreddit = reddit.subreddit('pythonforengineers')
 for submission in subreddit.new(limit=5):
-    if submission.id not in replied_to and submission.created_utc > main.prevTime:
+    if submission.id not in replied_to:
         if re.search("boom", submission.title, re.IGNORECASE):
-            submission.reply("The boom counter has been reset! Days since last boom: ", main.daysSince)
+            submission.reply(replyText)
             print("Bot replying to : ", submission.title)
             replied_to.append(submission.id)
 
