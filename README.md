@@ -5,7 +5,7 @@
 ### I needed a project to refresh my Python skills so I decided to take on the challenge of actually implementing the boom counter with this bot.
 
 ## Intent:
-### This is just a joke project and only for fun. I doubt it will be well-received on the Bellingham subreddit. I am implementing this project with the following goals in mind:
+### This project is only for fun. I doubt it will be well-received on the Bellingham subreddit. I am implementing this project with the following goals in mind:
     
     1. Brush up on my Python knowledge
     2. Play with Reddit's API
